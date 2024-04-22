@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 
 
 
@@ -170,7 +170,7 @@ while( j <= 10 ){
     Console.WriteLine(j);
     j++;
 }
-*/
+
 //do while
 
 char choice;
@@ -182,3 +182,81 @@ do
 
 }
 while (choice =='Y' || choice=='y');
+
+
+//Arrays 
+
+int[] even = { 2,4,6,8,10 };
+
+//int[] odd = new int[5] ;
+int[] odd = { 1,3,5,7,9 };
+
+//printing an array using loops
+//                i < 5
+//int i; global scope
+for(  int i = 0; i<odd.Length; i++)//local scope of i here
+{
+    Console.WriteLine(odd[i]);
+}
+
+//taking user  input in array
+using System.Security.Cryptography;
+
+string[] user = new string[5];
+
+for (int j = 0; j < user.Length; j++)
+{
+    
+    Console.WriteLine($"Please enter values for {j}th index");
+    user[j] = Console.ReadLine();
+}
+
+Console.WriteLine("Your given array is: ");
+
+for (int i = 0; i < user.Length; i++)//local scope of i here
+{
+    Console.WriteLine(user[i]);
+}
+
+//sort
+
+//Multidimensional Arrays
+
+int[,] marks = { 
+    { 45, 75, 100 },
+    { 45, 75, 89 },
+    { 12, 56, 44} 
+}; //3X3
+
+//Nested Loops
+for (int i = 0; i < marks.GetLength(0); i++)
+{
+    for (int j = 0; j < marks.GetLength(1); j++) 
+    {
+        Console.WriteLine(marks[i,j]);
+    }
+    Console.WriteLine();
+}
+Console.WriteLine(marks[1,2]);
+*/
+//Mutable / Immutable
+int[] nums = { 12, 15,1 };//{1,12,15}
+Array.Sort(nums);// Changes the orignal array (Mutable)
+Console.WriteLine(nums[0]);
+
+int index = Array.BinarySearch(nums, 12);
+Console.WriteLine(index);
+
+int num = Array.Find(nums, x => x > 9);
+Console.WriteLine(num);
+
+int[] num2 = Array.FindAll(nums, x => x < 19);
+Console.WriteLine(num2[0]);
+Console.WriteLine(num2[1]);
+Console.WriteLine(num2[2]);
+
+Array.Reverse(nums);//{15, 12, 1}
+Console.WriteLine(nums[0]);
+
+Console.WriteLine(Array.IndexOf(nums ,12));
+Console.WriteLine(Array.LastIndexOf(nums, 12));
