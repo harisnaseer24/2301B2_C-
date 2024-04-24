@@ -186,9 +186,9 @@ while (choice =='Y' || choice=='y');
 
 //Arrays 
 
-int[] even = { 2,4,6,8,10 };
+int[] even = { 2,4,6,8,10 };//
 
-//int[] odd = new int[5] ;
+//int[] odd = new int[5] ;{ 0,0,0,0,0 }
 int[] odd = { 1,3,5,7,9 };
 
 //printing an array using loops
@@ -238,7 +238,7 @@ for (int i = 0; i < marks.GetLength(0); i++)
     Console.WriteLine();
 }
 Console.WriteLine(marks[1,2]);
-*/
+
 //Mutable / Immutable
 int[] nums = { 12, 15,1 };//{1,12,15}
 Array.Sort(nums);// Changes the orignal array (Mutable)
@@ -260,3 +260,34 @@ Console.WriteLine(nums[0]);
 
 Console.WriteLine(Array.IndexOf(nums ,12));
 Console.WriteLine(Array.LastIndexOf(nums, 12));
+
+string[] names = { "Haris", "Owais", "Ebad", "Afzal" };
+
+//var is used for dynamic datatype selection
+foreach (var item in names)
+{
+	Console.Write(" \"" + item +"\"");
+	Console.Write(" \\" + item + "\"");
+	//Console.WriteLine(item);
+}
+*/
+
+//Jagged Array
+string[][] skillSet =
+{
+    new string[2]{"php","sql"},
+	 new string[4]{"node js","Mongodb", "nextjs","React"},
+	  new string[2]{"Baatain", "HTML"},
+};
+
+
+//Console.WriteLine(skillSet[1][3]);
+
+foreach (var item in skillSet)
+{
+    foreach (var item1 in item)
+    {
+        Console.Write(" " + item1 + " ");
+    }
+    Console.WriteLine();
+}
