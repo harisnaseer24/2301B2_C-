@@ -272,7 +272,7 @@ foreach (var item in names)
 }
 */
 
-//Jagged Array
+//Jagged Array : each sub array can have different size
 string[][] skillSet =
 {
     new string[2]{"php","sql"},
@@ -291,3 +291,10 @@ foreach (var item in skillSet)
     }
     Console.WriteLine();
 }
+
+//Placeholders
+
+string fname = Console.ReadLine();
+string lname = Console.ReadLine();
+
+Console.WriteLine("Hello {1} {0}",fname,lname);
