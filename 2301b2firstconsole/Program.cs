@@ -362,5 +362,29 @@ int multiply(int a,int b)
 }
 
 Console.WriteLine(multiply(34787, 3434));
+
+//Task : Percentage Calculator
+
 */
 
+void PerCal()
+{
+    Console.WriteLine("Enter your Obtained Marks : ");
+    double Obtained= Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Enter Total Marks : ");
+    double Total = Convert.ToDouble(Console.ReadLine());
+    if(Obtained <= Total)
+    {
+        double Percentage = (Obtained / Total) * 100;
+        Console.WriteLine($"You' ve got {double.Round(Percentage, 2)}%");
+    }
+    else
+    {
+        Console.WriteLine($"Obtained marks must be less than or equal to Total Marks.. :(");
+    }
+
+   
+
+}
+
+PerCal();
