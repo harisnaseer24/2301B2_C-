@@ -270,7 +270,6 @@ foreach (var item in names)
 	Console.Write(" \\" + item + "\"");
 	//Console.WriteLine(item);
 }
-*/
 
 //Jagged Array : each sub array can have different size
 string[][] skillSet =
@@ -294,7 +293,74 @@ foreach (var item in skillSet)
 
 //Placeholders
 
-string fname = Console.ReadLine();
-string lname = Console.ReadLine();
+string fname = Console.ReadLine();// Haris
+string mname = Console.ReadLine();// naseer
+string lname = Console.ReadLine();// Ahmed
 
-Console.WriteLine("Hello {1} {0}",fname,lname);
+Console.WriteLine("Hello {2} ,{0} {1}",fname,mname,lname);
+
+
+// Functions
+
+//Pre Defined Functions 
+//Math.Tan(90);
+
+//User Defined Functions
+//defining a function
+
+// returnType functionName ( Params ){ code }
+void add()
+{
+    Console.WriteLine(10 + 2);
+}
+//calling a function
+add();
+//1. No Return No Parameters
+
+void Greet ()
+{
+    Console.WriteLine("Salam, Jumma Mubarak.");
+    
+}
+Greet();
+
+//2. Return with No Parameters
+
+string Greet()
+{
+    return ("Salam, Jumma Mubarak from return function.");
+
+}
+
+string message = Greet();
+Console.WriteLine(message);
+
+//3. No Return with Parameters
+void Greet(string name)//Parameter
+{
+    Console.WriteLine($"Salam {name}, Jumma Mubarak.");
+
+}
+
+string name = Console.ReadLine();
+Greet(name);//Argument
+
+
+void GreetWithAge(string name, byte age )//Parameter
+{
+    Console.WriteLine($"Hi {name}, your Age is {age}");
+
+}
+GreetWithAge("Haris",23);//Argument
+
+
+//4. Return with Parameters
+
+int multiply(int a,int b)
+{
+    return (a * b);
+}
+
+Console.WriteLine(multiply(34787, 3434));
+*/
+
