@@ -363,9 +363,9 @@ int multiply(int a,int b)
 
 Console.WriteLine(multiply(34787, 3434));
 
-//Task : Percentage Calculator
+//Task : Percentage Calculator {tip: Additionaly you can even show grade of students using conditional statements}
 
-*/
+
 
 void PerCal()
 {
@@ -388,3 +388,171 @@ void PerCal()
 }
 
 PerCal();
+*/
+/*
+try
+{
+
+Console.WriteLine("Enter your Day: ");
+int days = Convert.ToInt32(Console.ReadLine());
+    switch (days)
+    {
+        case 1:
+            Console.WriteLine("Today is Monday");
+            break;
+
+        case 2:
+            Console.WriteLine("Today is Tuesday");
+            break;
+
+        case 3:
+            Console.WriteLine("Today is Wednesday");
+            break;
+
+        case 4:
+            Console.WriteLine("Today is Thursday");
+            break;
+
+        case 5:
+            Console.WriteLine("Today is Friday");
+            break;
+        case 6:
+            Console.WriteLine("Today is Saturday");
+            break;
+        case 7:
+            Console.WriteLine("Today is Sunday");
+            Console.WriteLine("Its off day 🎉🎉🎉🎉👍😁😂🤣");
+            break;
+        default:
+            Console.WriteLine("Kindly Enter single digit value between 1 to 7");
+            break;
+
+    }
+
+}
+catch (FormatException)
+{
+    Console.WriteLine("Kindly Enter Integer Value");
+}
+
+
+//List<string> movies = new List<string>();
+
+//movies.Add("A");
+//movies.Add("B");
+//movies.Add("C");
+//movies.Add("D");
+//movies.Add("E");
+//movies.Add("F");
+//movies.Add("G");
+//movies.Add("H");
+//movies.Add("H");
+//movies.Add("Moon Light");
+
+
+
+//movies.Remove("D");
+//movies.Add("D");
+
+//movies.Insert(1, "Moon Light");
+
+////movies.Clear();
+
+//Console.WriteLine($"Contains: {movies.Contains("E")}");
+//Console.WriteLine($"Count: { movies.Count()}");
+//Console.WriteLine($"Index of: {movies.IndexOf("Moon Light")}");
+//Console.WriteLine($"Last Index of: {movies.LastIndexOf("Moon Light")}");
+
+
+//movies.Sort();
+//movies.Reverse();
+*/
+
+
+//Exception Handling
+
+//try / catch block
+
+/*
+try
+{
+    Console.WriteLine("Enter an integer value from 1 to 7");
+    int num = Convert.ToInt32(Console.ReadLine());
+    switch (num)
+    {
+        case 1:
+            Console.WriteLine("Today is monday");
+            break;
+        case 2:
+            Console.WriteLine("Today is tuesday");
+            break;
+        case 3:
+            Console.WriteLine("Today is wednesday");
+            break;
+        case 4:
+            Console.WriteLine("Today is thursday");
+            break;
+        case 5:
+            Console.WriteLine("Today is friday");
+            break;
+        case 6:
+            Console.WriteLine("Today is saturday");
+            break;
+        case 7:
+            Console.WriteLine("Today is Sunday");
+            break;
+        default:
+            Console.WriteLine("Today is monday");
+            break;
+
+    }
+}
+
+catch (FormatException)
+{
+    Console.WriteLine("Please enter integer value from 1 to 7");
+}
+
+
+// Collections - 
+
+// Non Generic Collections - Arrays (Fixed Size)
+// Generic Collections - List (Dynamic Size) + Additional Methods(Add,Remove,Clear,Sort,Reverse)
+
+//List
+
+List<string> cars = new List<string>();
+
+cars.Add("Mustang");
+cars.Add("Ford Raptor");
+cars.Add("Mercedes Benz");
+cars.Add("Audi A6");
+cars.Add("Rolls Royce");
+cars.Add("Mehran");
+cars.Add("Supra");
+cars.Add("Fortuner");
+
+Console.WriteLine(cars[5]);
+cars.Add("Revo");
+
+cars.Remove("Mehran");
+
+Console.WriteLine("Getting Cars for AutoShow");
+
+
+//cars.Clear(); // Empty list
+//Console.WriteLine(cars[0]);
+
+// Contains, count,
+//
+cars.Insert(4, "civic");
+
+foreach (var car in cars)
+{
+    Console.WriteLine(car);
+}
+Console.WriteLine(cars.Count());
+
+
+Console.WriteLine(cars.Contains("city"));
+*/
