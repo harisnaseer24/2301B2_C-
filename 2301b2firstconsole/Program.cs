@@ -388,86 +388,6 @@ void PerCal()
 }
 
 PerCal();
-*/
-/*
-try
-{
-
-Console.WriteLine("Enter your Day: ");
-int days = Convert.ToInt32(Console.ReadLine());
-    switch (days)
-    {
-        case 1:
-            Console.WriteLine("Today is Monday");
-            break;
-
-        case 2:
-            Console.WriteLine("Today is Tuesday");
-            break;
-
-        case 3:
-            Console.WriteLine("Today is Wednesday");
-            break;
-
-        case 4:
-            Console.WriteLine("Today is Thursday");
-            break;
-
-        case 5:
-            Console.WriteLine("Today is Friday");
-            break;
-        case 6:
-            Console.WriteLine("Today is Saturday");
-            break;
-        case 7:
-            Console.WriteLine("Today is Sunday");
-            Console.WriteLine("Its off day 🎉🎉🎉🎉👍😁😂🤣");
-            break;
-        default:
-            Console.WriteLine("Kindly Enter single digit value between 1 to 7");
-            break;
-
-    }
-
-}
-catch (FormatException)
-{
-    Console.WriteLine("Kindly Enter Integer Value");
-}
-
-
-//List<string> movies = new List<string>();
-
-//movies.Add("A");
-//movies.Add("B");
-//movies.Add("C");
-//movies.Add("D");
-//movies.Add("E");
-//movies.Add("F");
-//movies.Add("G");
-//movies.Add("H");
-//movies.Add("H");
-//movies.Add("Moon Light");
-
-
-
-//movies.Remove("D");
-//movies.Add("D");
-
-//movies.Insert(1, "Moon Light");
-
-////movies.Clear();
-
-//Console.WriteLine($"Contains: {movies.Contains("E")}");
-//Console.WriteLine($"Count: { movies.Count()}");
-//Console.WriteLine($"Index of: {movies.IndexOf("Moon Light")}");
-//Console.WriteLine($"Last Index of: {movies.LastIndexOf("Moon Light")}");
-
-
-//movies.Sort();
-//movies.Reverse();
-*/
-
 
 //Exception Handling
 
@@ -556,3 +476,170 @@ Console.WriteLine(cars.Count());
 
 Console.WriteLine(cars.Contains("city"));
 */
+
+
+//Any datatype can come inside
+//using System.Collections;
+//ArrayList countries = new ArrayList();
+//ArrayList cities = new ArrayList();
+//cities.Add("Karachi");
+//cities.Add("Karachi");
+//cities.Add("Karachi");
+//countries.Add(76);
+//countries.Add(76);
+
+//countries.RemoveAt(0);
+//countries.AddRange(cities);
+
+//countries.RemoveRange(2,1);
+
+////foreach (var item in countries)
+////{
+////    Console.WriteLine(item);
+////}
+//ArrayList subCountries= countries.GetRange(0, 3);
+//foreach (var item in countries)
+//{
+//    Console.WriteLine(item);
+//}
+//Any datatype can come inside
+
+//using System.Collections;
+
+//Hashtable actors = new Hashtable();
+//actors.Add("no1", "Shahrukh Khan");
+//actors.Add("no2", "Shahrukh");
+//actors.Add("no3", 45);
+//foreach (DictionaryEntry entry in actors)
+//{
+//    Console.WriteLine("{0}: {1}", entry.Key, entry.Value);
+//}
+
+//string actor = actors["no3"].ToString();
+//Console.WriteLine((actor["no1"].ToString()));
+//int abc = actors.GetHashCode();
+//Contains check for a specific key
+//ContainsValue Check for a specific value.
+
+//Console.WriteLine(abc);
+//Dictionary<string,string> singers = new Dictionary<string,string>();
+//singers.Add("1st", "Arijit Singh");
+//singers.Add("2nd", "Shreya Ghoshal");
+//singers.Add("3rd", "B Praag");
+////string singer = singers["2nd"].ToString();
+
+//Console.WriteLine(singers["2nd"]);
+//string check = "B Praag";
+//bool a =  singers.TryGetValue("3rd",out check);
+//Console.WriteLine(a);
+//singers.Add("4th", "Jubin Nautiyal");
+//foreach (var item in singers)
+//{
+
+//   string[] abcd= ((item.ToString()).Split(","));
+//    Console.WriteLine(abcd[0].Trim('[')+" singer is : " +abcd[1].Trim(']'));
+//}
+
+//Stack
+
+//Stack<string> cars = new Stack<string>();
+//cars.Push("Buggati");
+//cars.Push("BMV");
+//cars.Push("Ferrari");
+//cars.Push("Civic");
+//cars.Push("City");
+//foreach (var item in cars)
+//{
+//    Console.WriteLine(item);
+//}
+
+//Console.WriteLine(cars.Pop());
+//Console.WriteLine(cars.Pop());
+//Console.WriteLine(cars.Pop());
+//Queue<string> cars = new Queue<string>();
+//cars.Enqueue("Buggati");
+//cars.Enqueue("BMV");
+//cars.Enqueue("Ferrari");
+//cars.Enqueue("Civic");
+//cars.Enqueue("City");
+//cars.Dequeue();
+//cars.Dequeue();
+//foreach (var item in cars)
+//{
+//    Console.WriteLine(item);
+//}
+
+
+//Priority Collections
+//Queues
+
+using System.Collections;
+
+//FIFO : First in first out
+//Queue<string> names = new Queue<string>();
+//names.Enqueue("Haris");
+//names.Enqueue("Afzal");
+//names.Enqueue("Owais");
+//names.Enqueue("Usama");
+//names.Enqueue("Ebad");
+
+//names.Dequeue();
+//names.Dequeue();
+
+//foreach (var name in names)
+//{
+//    Console.WriteLine(name);
+
+//}
+
+//LIFO : Last in first out
+
+//Stack<string> names = new Stack<string>();
+
+//names.Push("Haris");
+//names.Push("Afzal");
+//names.Push("Owais");
+//names.Push("Usama");
+//names.Push("Ebad");
+
+//names.Pop();
+//names.Pop();
+//names.Pop();
+//names.Pop();
+
+//foreach (var name in names)
+//{
+//    Console.WriteLine(name);
+
+//}
+
+//Array List (any datatype can become an element) Non- Generic
+ArrayList person2 = new ArrayList();
+person2.Add("Shariq Ahmed");
+person2.Add("+92 2311454545");
+person2.Add(45);
+
+ArrayList person = new ArrayList();
+person.Add("Haris Naseer");
+person.Add("+92 3172021951");
+person.Add(56);
+person.Add("BSCS");
+person.Add("Faculty Member");
+person.AddRange(person2);
+person.RemoveRange(2,5);
+person.Clear();
+
+//person.Remove(56);
+//person.RemoveAt(2);// removes BSCS on 2nd index
+
+
+//Console.WriteLine(person[1]);
+
+foreach (var item in person)
+{
+    Console.WriteLine(item);
+}
+
+
+//Create an Array List for Mobile specifications. Take input from user and save the features in your arraylist.
+//As User types ok in input you have to display a thanks msg with all specifications.
