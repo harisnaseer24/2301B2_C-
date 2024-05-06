@@ -477,103 +477,10 @@ Console.WriteLine(cars.Count());
 Console.WriteLine(cars.Contains("city"));
 */
 
-
-//Any datatype can come inside
-//using System.Collections;
-//ArrayList countries = new ArrayList();
-//ArrayList cities = new ArrayList();
-//cities.Add("Karachi");
-//cities.Add("Karachi");
-//cities.Add("Karachi");
-//countries.Add(76);
-//countries.Add(76);
-
-//countries.RemoveAt(0);
-//countries.AddRange(cities);
-
-//countries.RemoveRange(2,1);
-
-////foreach (var item in countries)
-////{
-////    Console.WriteLine(item);
-////}
-//ArrayList subCountries= countries.GetRange(0, 3);
-//foreach (var item in countries)
-//{
-//    Console.WriteLine(item);
-//}
-//Any datatype can come inside
-
-//using System.Collections;
-
-//Hashtable actors = new Hashtable();
-//actors.Add("no1", "Shahrukh Khan");
-//actors.Add("no2", "Shahrukh");
-//actors.Add("no3", 45);
-//foreach (DictionaryEntry entry in actors)
-//{
-//    Console.WriteLine("{0}: {1}", entry.Key, entry.Value);
-//}
-
-//string actor = actors["no3"].ToString();
-//Console.WriteLine((actor["no1"].ToString()));
-//int abc = actors.GetHashCode();
-//Contains check for a specific key
-//ContainsValue Check for a specific value.
-
-//Console.WriteLine(abc);
-//Dictionary<string,string> singers = new Dictionary<string,string>();
-//singers.Add("1st", "Arijit Singh");
-//singers.Add("2nd", "Shreya Ghoshal");
-//singers.Add("3rd", "B Praag");
-////string singer = singers["2nd"].ToString();
-
-//Console.WriteLine(singers["2nd"]);
-//string check = "B Praag";
-//bool a =  singers.TryGetValue("3rd",out check);
-//Console.WriteLine(a);
-//singers.Add("4th", "Jubin Nautiyal");
-//foreach (var item in singers)
-//{
-
-//   string[] abcd= ((item.ToString()).Split(","));
-//    Console.WriteLine(abcd[0].Trim('[')+" singer is : " +abcd[1].Trim(']'));
-//}
-
-//Stack
-
-//Stack<string> cars = new Stack<string>();
-//cars.Push("Buggati");
-//cars.Push("BMV");
-//cars.Push("Ferrari");
-//cars.Push("Civic");
-//cars.Push("City");
-//foreach (var item in cars)
-//{
-//    Console.WriteLine(item);
-//}
-
-//Console.WriteLine(cars.Pop());
-//Console.WriteLine(cars.Pop());
-//Console.WriteLine(cars.Pop());
-//Queue<string> cars = new Queue<string>();
-//cars.Enqueue("Buggati");
-//cars.Enqueue("BMV");
-//cars.Enqueue("Ferrari");
-//cars.Enqueue("Civic");
-//cars.Enqueue("City");
-//cars.Dequeue();
-//cars.Dequeue();
-//foreach (var item in cars)
-//{
-//    Console.WriteLine(item);
-//}
-
-
 //Priority Collections
 //Queues
 
-using System.Collections;
+//using System.Collections;
 
 //FIFO : First in first out
 //Queue<string> names = new Queue<string>();
@@ -614,20 +521,20 @@ using System.Collections;
 //}
 
 //Array List (any datatype can become an element) Non- Generic
-ArrayList person2 = new ArrayList();
-person2.Add("Shariq Ahmed");
-person2.Add("+92 2311454545");
-person2.Add(45);
+//ArrayList person2 = new ArrayList();
+//person2.Add("Shariq Ahmed");
+//person2.Add("+92 2311454545");
+//person2.Add(45);
 
-ArrayList person = new ArrayList();
-person.Add("Haris Naseer");
-person.Add("+92 3172021951");
-person.Add(56);
-person.Add("BSCS");
-person.Add("Faculty Member");
-person.AddRange(person2);
-person.RemoveRange(2,5);
-person.Clear();
+//ArrayList person = new ArrayList();
+//person.Add("Haris Naseer");
+//person.Add("+92 3172021951");
+//person.Add(56);
+//person.Add("BSCS");
+//person.Add("Faculty Member");
+//person.AddRange(person2);
+//person.RemoveRange(2,5);
+//person.Clear();
 
 //person.Remove(56);
 //person.RemoveAt(2);// removes BSCS on 2nd index
@@ -635,11 +542,62 @@ person.Clear();
 
 //Console.WriteLine(person[1]);
 
-foreach (var item in person)
-{
-    Console.WriteLine(item);
-}
+//foreach (var item in person)
+//{
+//    Console.WriteLine(item);
+//}
 
 
 //Create an Array List for Mobile specifications. Take input from user and save the features in your arraylist.
 //As User types ok in input you have to display a thanks msg with all specifications.
+
+
+
+//Dictionary (Generics) {key : value}<type>
+
+using System.Collections;
+
+Dictionary<string, string> Stationary = new Dictionary<string, string>();
+
+Stationary.Add("product1", "Ink Pen");
+Stationary.Add("product2", "Ball Pen");
+Stationary.Add("product3", "Pointer");
+Stationary.Add("product4", "Board Marker");
+Stationary.Add("product5", "Permanent Marker");
+Stationary.Remove("product5");
+
+//Console.WriteLine(Stationary["product4"]);
+
+//for (int i = 1; i <= 5; i++)
+//{
+//    Console.WriteLine(Stationary["product"+i]);
+//}
+
+//foreach (var item in Stationary)
+//{
+//    //Console.WriteLine(item);
+//  string[] test =  (item.ToString()).Split(","); // [ "[product1", " Ink pen]"  ]
+//    string key = test[0].Trim('[');// [product1 = > trim('[') => product1
+//    string value = test[1].Trim(']').ToUpper();
+//    Console.WriteLine("The key is : {0} and the value is: {1}",key,value);
+//}
+
+
+// HashTables (Non-Generics)  {key : value}
+Hashtable Actors = new Hashtable();
+Actors.Add("1st", "Shahrukh khan");
+Actors.Add("2nd", "Amir khan");
+Actors.Add("3rd", "Salman khan");
+Actors.Add("4th", "Ahsan khan");
+Actors.Add("5th",007);
+Actors.Contains("5th");
+Actors.Remove("4th");
+
+Console.WriteLine(Actors["1st"]);
+
+foreach (DictionaryEntry item in Actors)
+{
+    Console.WriteLine(item.Key + ": " +item.Value);
+}
+
+Console.WriteLine(Actors.GetHashCode());
