@@ -475,7 +475,7 @@ Console.WriteLine(cars.Count());
 
 
 Console.WriteLine(cars.Contains("city"));
-*/
+
 
 //Priority Collections
 //Queues
@@ -556,7 +556,6 @@ Console.WriteLine(cars.Contains("city"));
 //Dictionary (Generics) {key : value}<type>
 
 using System.Collections;
-
 Dictionary<string, string> Stationary = new Dictionary<string, string>();
 
 Stationary.Add("product1", "Ink Pen");
@@ -566,8 +565,14 @@ Stationary.Add("product4", "Board Marker");
 Stationary.Add("product5", "Permanent Marker");
 Stationary.Remove("product5");
 
-//Console.WriteLine(Stationary["product4"]);
+//Will not allow us to use DictionaryEntry because of fixed datatype.
 
+//foreach (DictionaryEntry item in Stationary)
+//{
+//    Console.WriteLine(item.Key + ": " + item.Value);
+//}
+
+//Console.WriteLine(Stationary["product4"]);
 //for (int i = 1; i <= 5; i++)
 //{
 //    Console.WriteLine(Stationary["product"+i]);
@@ -600,4 +605,127 @@ foreach (DictionaryEntry item in Actors)
     Console.WriteLine(item.Key + ": " +item.Value);
 }
 
-Console.WriteLine(Actors.GetHashCode());
+Console.WriteLine(Actors.GetHashCode());*/
+
+
+
+//Game supermario = new Game();
+
+//supermario.gameName = "Super Mario 7";
+//supermario.company = "Nintendo";
+//supermario.gameVersion = 2;
+
+
+//Game supermario = new()
+//{
+//    gameName = "Super Mario 7",
+//    company = "Nintendo",
+//    gameVersion = 2
+//};
+
+
+
+//Game supermario = new Game("Super Mario 5", 2, "Nintendo");
+//Game GTA = new Game("GTA 5");
+
+//Console.WriteLine(GTA.gameName);
+
+//Console.WriteLine(supermario.gameName);
+
+
+//class Game
+//{
+//    public string gameName;
+//    public int gameVersion;
+//    public string company;
+
+
+
+//    public Game(string gN, int gameVersion, string company)
+//    {
+//        this.gameName = gN;
+//        this.gameVersion = gameVersion;
+//        this.company = company;
+//    }
+
+//    public Game(string gN, int gameVersion)
+//    {
+//        this.gameName = gN;
+//        this.gameVersion = gameVersion;
+//    }
+
+//    public Game(string gN)
+//    {
+//        this.gameName = gN;
+//    }
+
+
+
+
+//}
+//String Methods
+using System.Collections;
+
+string test = "Welcome,  to, C#, Programming";
+
+//Console.WriteLine(test.Replace("C#","C++"));
+//Console.WriteLine(test.ToLower());
+//Console.WriteLine(test.ToUpper());
+
+
+//string[] abc = test.Split("+");
+//foreach (var item in abc)
+//{
+
+//    Console.WriteLine(item);
+
+//}
+
+//string xyz = test.Trim();
+//Console.WriteLine(xyz);
+
+
+//Classes and Objects
+
+Song abc = new Song();
+Console.WriteLine(abc.SongName);
+
+Console.WriteLine(abc.Singer);
+abc.Singer = "Ali Zafar";
+abc.SongName = "Allay";
+abc.ReleaseDate = "10/6/2019";
+
+Console.WriteLine(abc.Singer);
+Console.WriteLine(abc.SongName);
+Console.WriteLine(abc.ReleaseDate);
+
+Song kamleya = new Song("KAmleya","Arijit Singh","12/4/24");
+Console.WriteLine(kamleya.Singer);
+Console.WriteLine(kamleya.SongName);
+Console.WriteLine(kamleya.ReleaseDate);
+
+class Song
+{
+    public string SongName;
+    public string Singer;
+    public string ReleaseDate;
+
+    public Song(){
+        this.SongName = "Unknown";
+       this.Singer = "Unknown";
+       this.ReleaseDate = "Unknown";
+    }  
+    //Cthis.nstructor (Method) Overloading
+    public Song(string name, string singer,string date){
+       this.SongName = name;
+       this.Singer = singer;
+       this.ReleaseDate = date;
+    }
+
+}
+
+
+
+
+
+
