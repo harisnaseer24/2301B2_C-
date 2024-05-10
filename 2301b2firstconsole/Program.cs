@@ -664,9 +664,9 @@ Console.WriteLine(Actors.GetHashCode());*/
 
 //}
 //String Methods
-using System.Collections;
+//using System.Collections;
 
-string test = "Welcome,  to, C#, Programming";
+//string test = "Welcome,  to, C#, Programming";
 
 //Console.WriteLine(test.Replace("C#","C++"));
 //Console.WriteLine(test.ToLower());
@@ -687,44 +687,134 @@ string test = "Welcome,  to, C#, Programming";
 
 //Classes and Objects
 
-Song abc = new Song();
-Console.WriteLine(abc.SongName);
+//Song abc = new Song(); 
+//Console.WriteLine(abc.SongName); 
+//Console.WriteLine(abc.Singer);
 
-Console.WriteLine(abc.Singer);
-abc.Singer = "Ali Zafar";
-abc.SongName = "Allay";
-abc.ReleaseDate = "10/6/2019";
 
-Console.WriteLine(abc.Singer);
-Console.WriteLine(abc.SongName);
-Console.WriteLine(abc.ReleaseDate);
+//abc.Singer = "Ali Zafar";
+//abc.SongName = "Allay";
+//abc.ReleaseDate = "10/6/2019";
 
-Song kamleya = new Song("KAmleya","Arijit Singh","12/4/24");
-Console.WriteLine(kamleya.Singer);
-Console.WriteLine(kamleya.SongName);
-Console.WriteLine(kamleya.ReleaseDate);
+//Console.WriteLine(abc.Singer);
+//Console.WriteLine(abc.SongName);
+//Console.WriteLine(abc.ReleaseDate);
 
-class Song
+//Song kamleya = new Song("KAmleya","Arijit Singh","12/4/24");
+//Console.WriteLine(kamleya.Singer);
+//Console.WriteLine(kamleya.SongName);
+//Console.WriteLine(kamleya.ReleaseDate);
+
+//class Song
+//{
+//    public string SongName;
+//    public string Singer;
+//    public string ReleaseDate;
+
+//    public Song(){
+//        this.SongName = "Unknown";
+//       this.Singer = "Unknown";
+//       this.ReleaseDate = "Unknown";
+//    }  
+//    //Constructor (Method) Overloading
+//    public Song(string name, string singer,string date){
+//       this.SongName = name;
+//       this.Singer = singer;
+//       this.ReleaseDate = date;
+//    }
+
+//}
+
+
+//indentation 
+//meaningful variable names
+//less repeatation
+//no errors
+//comments
+// OOP (Object Oriented Programming)
+//access modifiers
+
+//main pillars
+//1. Abstraction
+//2. Encapsulation
+//3. Polymorphism
+// Overloading  add(1,2), add(1,2,3), add(4,56,7,8) ( parameters or return type of methods should be different in overloading)
+// Overriding
+//4. Inheritance
+
+
+//Creating Objects of Child class
+Cars raptor = new Cars("2024 LE","Ford Raptor", 320.57f  );
+
+
+//raptor.run();
+
+raptor.stop(raptor.name);
+
+//over riding (Can over riding is possible within a class?)
+raptor.run();
+
+//Creating object of grandchild class
+Ecar bmw = new Ecar("2024", "bmw i8 electric",240.44f ,"1kv", "800 KM");
+bmw.run();
+
+
+
+
+//Parent Class (Super Class)
+class Vehicle
 {
-    public string SongName;
-    public string Singer;
-    public string ReleaseDate;
+   public float speed;
 
-    public Song(){
-        this.SongName = "Unknown";
-       this.Singer = "Unknown";
-       this.ReleaseDate = "Unknown";
-    }  
-    //Cthis.nstructor (Method) Overloading
-    public Song(string name, string singer,string date){
-       this.SongName = name;
-       this.Singer = singer;
-       this.ReleaseDate = date;
+    public void run()
+    {
+        Console.WriteLine("Boom!  Vehicle started running");
+    }
+    public void stop(string name)
+    {
+        Console.WriteLine($"Boom!  {name} is stopping.");
+    }
+}
+
+//Child Class (Derived Class)
+class Cars: Vehicle
+{
+    public string model;
+    public string name;
+
+    //constructor
+    public Cars(string model, string name, float speed)
+    {
+        this.model = model;
+        this.name = name;
+        this.speed = speed;
+    }
+    public void run()
+    {
+        Console.WriteLine($"Boom!  {this.name} started running");
     }
 
 }
 
+//Child class of Cars
+class  Ecar: Cars
+{
+    public string battery;
+    public string OneChargeMileage;
 
+    //constructor
+    public Ecar(string model, string name, float speed, string battery, string OneChargeMileage):base(model, name,speed)
+    {
+       
+        this.battery = battery; 
+        this.OneChargeMileage = OneChargeMileage;
+    }
+    public void run()
+    {
+        Console.WriteLine($"Boom!  {this.name} started running. It has huge battery of  {this.battery} and gives  {this.OneChargeMileage} in one charge.  ");
+    }
+
+}
 
 
 
