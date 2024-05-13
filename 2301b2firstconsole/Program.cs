@@ -744,78 +744,222 @@ Console.WriteLine(Actors.GetHashCode());*/
 
 
 //Creating Objects of Child class
-Cars raptor = new Cars("2024 LE","Ford Raptor", 320.57f  );
+//Cars raptor = new Cars("2024 LE","Ford Raptor", 320.57f  );
 
 
+////raptor.run();
+
+//raptor.stop(raptor.name);
+
+////over riding (Can over riding is possible within a class?)
 //raptor.run();
 
-raptor.stop(raptor.name);
-
-//over riding (Can over riding is possible within a class?)
-raptor.run();
-
-//Creating object of grandchild class
-Ecar bmw = new Ecar("2024", "bmw i8 electric",240.44f ,"1kv", "800 KM");
-bmw.run();
+////Creating object of grandchild class
+//Ecar bmw = new Ecar("2024", "bmw i8 electric",240.44f ,"1kv", "800 KM");
+//bmw.run();
 
 
 
 
-//Parent Class (Super Class)
-class Vehicle
+////Parent Class (Super Class)
+//class Vehicle
+//{
+//   public float speed;
+
+//    public void run()
+//    {
+//        Console.WriteLine("Boom!  Vehicle started running");
+//    }
+//    public void stop(string name)
+//    {
+//        Console.WriteLine($"Boom!  {name} is stopping.");
+//    }
+//}
+
+////Child Class (Derived Class)
+//class Cars: Vehicle
+//{
+//    public string model;
+//    public string name;
+
+//    //constructor
+//    public Cars(string model, string name, float speed)
+//    {
+//        this.model = model;
+//        this.name = name;
+//        this.speed = speed;
+//    }
+//    public void run()
+//    {
+//        Console.WriteLine($"Boom!  {this.name} started running");
+//    }
+
+//}
+
+////Child class of Cars
+//class  Ecar: Cars
+//{
+//    public string battery;
+//    public string OneChargeMileage;
+
+//    //constructor gettin use 
+//    public Ecar(string model, string name, float speed, string battery, string OneChargeMileage):base(model, name,speed)
+//    {
+
+//        this.battery = battery; 
+//        this.OneChargeMileage = OneChargeMileage;
+//    }
+//    public void run()
+//    {
+//        Console.WriteLine($"Boom!  {this.name} started running. It has huge battery of  {this.battery} and gives  {this.OneChargeMileage} in one charge.  ");
+//    }
+
+//}
+
+//Vehicle abc = new Vehicle(); can't create an object of an abstract class
+//Cars a = new Cars("2023", "Corolla", 220.45f);
+//Cars b = new Cars("2023", "Surf", 220.45f);
+//Cars c = new Cars("2023", "Mark X", 220.45f);
+//Cars d = new Cars("2023", "Revo", 220.45f);
+
+//Cars[] carsforSale = new Cars[4];
+//carsforSale[0] = a;
+//carsforSale[1] = b;
+//carsforSale[2] = c;
+//carsforSale[3] = d;
+
+//foreach (Cars car in carsforSale)
+//{
+//    car.run();
+//    Console.WriteLine(car.name);
+//    car.stop(car.name);
+//    Console.WriteLine();
+//}
+
+////a.run();
+
+////Math x = new Math();
+////x.Abs(-45);
+
+////Calling a static function
+////Vehicle.race();
+
+// abstract  class Vehicle
+//{
+//    public float speed;
+//    static public int wheels;
+
+//    //static methods are made for class not for objects
+//    static public void race()
+//    {
+//        Console.WriteLine("Let's go race has been started.");
+//    }
+//    public void run()
+//    {
+//        Console.WriteLine("Boom!  Vehicle started running");
+//    }
+//    public void stop(string name)
+//    {
+//        Console.WriteLine($"Boom!  {name} is stopping.");
+//    }
+//}
+
+////Child Class (Derived Class)
+//class Cars : Vehicle
+//{
+//    public string model;
+//    public string name;
+
+//    //constructor
+//    public Cars(string model, string name, float speed)
+//    {
+//        this.model = model;
+//        this.name = name;
+//        this.speed = speed;
+//    }
+//    public void run()
+//    {
+//        Console.WriteLine($"Boom!  {this.name} started running");
+//    }
+
+//}
+
+
+//Abstract class or interfaces
+
+//Interfaces (Need to implement all methods when inheriting from interfaces):
+
+//Lion simba = new Lion();
+//simba.hunt();
+//simba.eat();
+
+
+//Deers jarvis = new Deers();
+//jarvis.run("Jarvis Deer");
+//jarvis.getEaten();
+
+Fishes nemo = new Fishes();
+nemo.run("Nemo");
+nemo.getEaten();
+nemo.hunt();
+
+Fishes Shark = new Fishes();
+Shark.hunt();
+Shark.eat();
+
+
+interface Hunters
 {
-   public float speed;
+    public void hunt();
+    public void eat();
+}
+interface Baits
+{
+    public void run(string name);
+    public void getEaten();
+}
 
-    public void run()
+public class Lion : Hunters
+{
+   public void hunt()
     {
-        Console.WriteLine("Boom!  Vehicle started running");
+        Console.WriteLine("The Lion is hunting a prey.");
     }
-    public void stop(string name)
-    {
-        Console.WriteLine($"Boom!  {name} is stopping.");
+    public void eat() {
+        Console.WriteLine("The Lion is eating a prey after successful hunt.");
     }
 }
 
-//Child Class (Derived Class)
-class Cars: Vehicle
-{
-    public string model;
-    public string name;
 
-    //constructor
-    public Cars(string model, string name, float speed)
+public class Deers : Baits
+{
+    public void run(string name)
     {
-        this.model = model;
-        this.name = name;
-        this.speed = speed;
+        Console.WriteLine($"The {name} is running from hunters.");
     }
-    public void run()
+    public void getEaten() {
+        Console.WriteLine("The Deer has been eaten by the Lions.");
+    }
+}
+
+// Multiple inheritance
+public class Fishes : Hunters , Baits
+{
+    public void hunt()
     {
-        Console.WriteLine($"Boom!  {this.name} started running");
+        Console.WriteLine("The Fish is hunting a prey.");
+    }
+    public void eat()
+    {
+        Console.WriteLine("The Fish is eating a prey after successful hunt.");
+    }
+    public void run(string name)
+    {
+        Console.WriteLine($"The {name} is running from hunters.");
+    }
+    public void getEaten()
+    {
+        Console.WriteLine("The Fish has been caught by the Hunters and getting eaten.");
     }
 
 }
-
-//Child class of Cars
-class  Ecar: Cars
-{
-    public string battery;
-    public string OneChargeMileage;
-
-    //constructor
-    public Ecar(string model, string name, float speed, string battery, string OneChargeMileage):base(model, name,speed)
-    {
-       
-        this.battery = battery; 
-        this.OneChargeMileage = OneChargeMileage;
-    }
-    public void run()
-    {
-        Console.WriteLine($"Boom!  {this.name} started running. It has huge battery of  {this.battery} and gives  {this.OneChargeMileage} in one charge.  ");
-    }
-
-}
-
-
-
-
