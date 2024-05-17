@@ -898,68 +898,143 @@ Console.WriteLine(Actors.GetHashCode());*/
 //jarvis.run("Jarvis Deer");
 //jarvis.getEaten();
 
-Fishes nemo = new Fishes();
-nemo.run("Nemo");
-nemo.getEaten();
-nemo.hunt();
+//using System.Security.Cryptography.X509Certificates;
 
-Fishes Shark = new Fishes();
-Shark.hunt();
-Shark.eat();
+//Fishes nemo = new Fishes();
+//nemo.run("Nemo");
+//nemo.getEaten();
+//nemo.hunt();
 
-
-interface Hunters
-{
-    public void hunt();
-    public void eat();
-}
-interface Baits
-{
-    public void run(string name);
-    public void getEaten();
-}
-
-public class Lion : Hunters
-{
-   public void hunt()
-    {
-        Console.WriteLine("The Lion is hunting a prey.");
-    }
-    public void eat() {
-        Console.WriteLine("The Lion is eating a prey after successful hunt.");
-    }
-}
+//Fishes Shark = new Fishes();
+//Shark.hunt();
+//Shark.eat();
 
 
-public class Deers : Baits
-{
-    public void run(string name)
-    {
-        Console.WriteLine($"The {name} is running from hunters.");
-    }
-    public void getEaten() {
-        Console.WriteLine("The Deer has been eaten by the Lions.");
-    }
-}
+//interface Hunters
+//{
+//    public void hunt();
+//    public void eat();
+//}
+//interface Baits
+//{
+//    public void run(string name);
+//    public void getEaten();
+//}
+
+//public class Lion : Hunters
+//{
+//   public void hunt()
+//    {
+//        Console.WriteLine("The Lion is hunting a prey.");
+//    }
+//    public void eat() {
+//        Console.WriteLine("The Lion is eating a prey after successful hunt.");
+//    }
+//}
+
+
+//public class Deers : Baits
+//{
+//    public void run(string name)
+//    {
+//        Console.WriteLine($"The {name} is running from hunters.");
+//    }
+//    public void getEaten() {
+//        Console.WriteLine("The Deer has been eaten by the Lions.");
+//    }
+//}
 
 // Multiple inheritance
-public class Fishes : Hunters , Baits
+//public class Fishes : Hunters , Baits
+//{
+//    public void hunt()
+//    {
+//        Console.WriteLine("The Fish is hunting a prey.");
+//    }
+//    public void eat()
+//    {
+//        Console.WriteLine("The Fish is eating a prey after successful hunt.");
+//    }
+//    public void run(string name)
+//    {
+//        Console.WriteLine($"The {name} is running from hunters.");
+//    }
+//    public void getEaten()
+//    {
+//        Console.WriteLine("The Fish has been caught by the Hunters and getting eaten.");
+//    }
+
+//}
+
+//front end, backend and fullstack examples
+
+//Abstraction
+// Facebook user , admin Panel, 
+
+//Encapsulation
+// properties and methods are bundled in a class.
+
+//Access Modifiers
+
+//1. public : any one can access.
+
+//2. private : only owner class can access.
+
+//3. protected : only owner class and child class can access
+
+Product duster = new Product("duster",100, 500);
+duster.showPrice();
+//Console.WriteLine(duster.qty);
+duster.showQty();
+
+
+houseHolds cushion = new houseHolds("cushion", 1500, 200,"decoration");
+
+cushion.showItem();
+
+public class Product
 {
-    public void hunt()
+    public string? name;
+    private int? price;
+    protected int? qty;
+
+    //parameterized
+    public Product(string name, int price, int qty)
     {
-        Console.WriteLine("The Fish is hunting a prey.");
+        this.name = name;
+        this.price = price;
+        this.qty = qty;
     }
-    public void eat()
+     
+    public void showPrice()
     {
-        Console.WriteLine("The Fish is eating a prey after successful hunt.");
+        Console.WriteLine(this.price);
+    } public void showQty()
+    {
+        Console.WriteLine(this.qty);
     }
-    public void run(string name)
+}
+
+
+public class houseHolds : Product
+{
+    public string category;
+
+    public houseHolds(string name , int price, int qty, string category): base(name,price,qty)
     {
-        Console.WriteLine($"The {name} is running from hunters.");
+        this.category = category;
+
     }
-    public void getEaten()
+
+    public void showItem()
     {
-        Console.WriteLine("The Fish has been caught by the Hunters and getting eaten.");
+        Console.WriteLine(this.name);
+       
+   //     Console.WriteLine(this.price);//cant access private property in child class
+        this.showPrice();
+        Console.WriteLine(this.qty);//can access protected property in child class
+        Console.WriteLine(this.category);
+
     }
 
 }
