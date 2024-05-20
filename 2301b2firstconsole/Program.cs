@@ -982,59 +982,159 @@ Console.WriteLine(Actors.GetHashCode());*/
 
 //3. protected : only owner class and child class can access
 
-Product duster = new Product("duster",100, 500);
-duster.showPrice();
-//Console.WriteLine(duster.qty);
-duster.showQty();
+//Product duster = new Product("duster",100, 500);
+//duster.showPrice();
+////Console.WriteLine(duster.qty);
+//duster.showQty();
 
 
-houseHolds cushion = new houseHolds("cushion", 1500, 200,"decoration");
+//houseHolds cushion = new houseHolds("cushion", 1500, 200,"decoration");
 
-cushion.showItem();
+//cushion.showItem();
 
-public class Product
-{
-    public string? name;
-    private int? price;
-    protected int? qty;
+//public class Product
+//{
+//    public string? name;
+//    private int? price;
+//    protected int? qty;
 
-    //parameterized
-    public Product(string name, int price, int qty)
-    {
-        this.name = name;
-        this.price = price;
-        this.qty = qty;
-    }
-     
-    public void showPrice()
-    {
-        Console.WriteLine(this.price);
-    } public void showQty()
-    {
-        Console.WriteLine(this.qty);
-    }
-}
+//    //parameterized (setter function)
+//    public Product(string name, int price, int qty)
+//    {
+//        this.name = name;
+//        this.price = price;
+//        this.qty = qty;
+//    }
 
 
-public class houseHolds : Product
-{
-    public string category;
 
-    public houseHolds(string name , int price, int qty, string category): base(name,price,qty)
-    {
-        this.category = category;
 
-    }
+//(Getter function)
+//    public void showPrice()
+//    {
+//        Console.WriteLine(this.price);
+//    } public void showQty()
+//    {
+//        Console.WriteLine(this.qty);
+//    }
+//}
 
-    public void showItem()
-    {
-        Console.WriteLine(this.name);
-       
-   //     Console.WriteLine(this.price);//cant access private property in child class
-        this.showPrice();
-        Console.WriteLine(this.qty);//can access protected property in child class
-        Console.WriteLine(this.category);
 
-    }
+//public class houseHolds : Product
+//{
+//    public string category;
 
-}
+//    public houseHolds(string name , int price, int qty, string category): base(name,price,qty)
+//    {
+//        this.category = category;
+
+//    }
+
+//    public void showItem()
+//    {
+//        Console.WriteLine(this.name);
+
+//   //     Console.WriteLine(this.price);//cant access private property in child class
+//        this.showPrice();
+//        Console.WriteLine(this.qty);//can access protected property in child class
+//        Console.WriteLine(this.category);
+
+//    }
+
+//}
+
+
+// Delegates
+
+//Maths.Calculator cal;
+
+//cal = Maths.Addition;
+
+//cal(65,7.9);
+
+////cal = Maths.Division;
+////cal(60, 10);
+
+//cal = Maths.Subtraction;
+//cal(60, 10);//50
+
+//cal = Maths.Multiplication;
+//cal(60, 10);//50
+
+
+//Console.WriteLine(Maths.Division(45, 5));
+
+
+
+//public class Maths
+//{
+//    public  delegate  void Calculator (double num1, double num2 );
+
+//    public static void Division(double num1, double num2)
+//    {
+
+//      Console.WriteLine(num1 / num2);
+
+//    }
+//    public static void Addition (double num1, double num2){
+
+//        Console.WriteLine(num1 +num2);
+
+//    }      
+
+//    public static void Subtraction(double num1, double num2)
+//    {
+
+//        Console.WriteLine(num1 - num2);
+
+//    }
+
+//    public static void Multiplication(double num1, double num2)
+//    {
+
+//        Console.WriteLine(num1 * num2);
+
+//    }
+
+//    //public static void Division(double num1, double num2)
+//    //{
+
+//    //    Console.WriteLine(num1 / num2);
+
+//    //}
+//}
+
+//stationary.getStationary shopping;
+
+//shopping = stationary.getPencilSharpener;
+//shopping("dollar", "blue");
+
+//public class stationary
+//{
+//    public delegate void getStationary(string item1, string item2);
+
+//    public static void  getPencilSharpener(string item1, string item2)
+//    {
+//        Console.WriteLine($"we have shipped your items including pencil of: {item1} and sharpener of :{item2}");
+//    }
+
+//    public static void  getInkpenRemover(string item1, string item2)
+//    {
+//        Console.WriteLine($"we have shipped your items including ink pen of: {item1} and remover of :{item2}");
+//    }
+
+//}
+
+// office , animals , clothes (any 2)
+
+//Ternary operator (conditional statement)
+
+string firstVal = "Haris";
+string secondVal = "Owais";
+bool condition= 67 <= 87;// true
+
+
+string check = (condition) ? firstVal : secondVal;
+
+Console.WriteLine(check);
+
