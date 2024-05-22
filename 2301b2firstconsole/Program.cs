@@ -1064,10 +1064,9 @@ Console.WriteLine(Actors.GetHashCode());*/
 
 //Console.WriteLine(Maths.Division(45, 5));
 
-
-
 //public class Maths
 //{
+
 //    public  delegate  void Calculator (double num1, double num2 );
 
 //    public static void Division(double num1, double num2)
@@ -1129,12 +1128,105 @@ Console.WriteLine(Actors.GetHashCode());*/
 
 //Ternary operator (conditional statement)
 
-string firstVal = "Haris";
-string secondVal = "Owais";
-bool condition= 67 <= 87;// true
+//string firstVal = "Haris";
+//string secondVal = "Owais";
+//bool condition= 67 <= 87;// true
 
 
-string check = (condition) ? firstVal : secondVal;
+//string check = (condition) ? firstVal : secondVal;
 
-Console.WriteLine(check);
+//Console.WriteLine(check);
+
+
+//getters and setters (Encapsulation)
+
+
+using System;
+using System.Collections;
+
+
+Burger Majestic = new Burger("The Majestic", 730);
+//Console.WriteLine(Majestic.Price);
+
+Burger DoubleDecker = new Burger("The DoubleDecker", 830);
+//Console.WriteLine(DoubleDecker.Price);
+
+Burger Doppler = new Burger("The Doppler", 2730);
+Console.WriteLine(Doppler.Price);
+
+//List<Burger> Orders = new List<Burger>();
+//Orders.Add(Majestic);
+//Orders.Add(DoubleDecker);
+//Orders.Add(Doppler);
+
+//Console.WriteLine(Orders[0].name);
+
+//Console.WriteLine("Under 1000 deals: ");
+//foreach (Burger item in Orders)
+//{
+//    if(item.Price <= 1000)
+//    {
+//        Console.WriteLine($"We are offering {item.name} at {item.Price}");
+//    }
+ 
+//}
+
+
+public class Burger
+{
+    public string name;
+    private int price;
+   // public int Price { get; set; }// Autocomplete property
+
+
+    public int Price
+    {
+        get
+        {
+            return this.price;
+        }
+        set
+        {
+            if (value <= 2000)
+            {
+                this.price = value;
+            }
+            else
+            {
+                this.price = 2000;
+            }
+
+           
+        }
+    }
+
+public Burger(string name, int price)
+{
+    this.name = name;
+    this.Price = price;
+}
+
+
+}
+
+//Enum
+
+//Console.WriteLine(PakistanXI.Naseem +" "+ (int)PakistanXI.Naseem +" & "+ (int)PakistanXI.Shaheen +" are going to attack in bowling.");
+
+
+
+//enum PakistanXI
+//{
+//    Rizwan = 34,
+//    SaimAyub =23,
+//    Babar =56,
+//    Fakhar =34,
+//    Imad = 37,
+//    Usman = 32,
+//    Shaheen=10,
+//    Haris = 150 ,
+//    Amir = 5,
+//    Shahdab =65,
+//    Naseem= 76
+//}
 
