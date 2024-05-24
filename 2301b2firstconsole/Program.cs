@@ -1141,18 +1141,17 @@ Console.WriteLine(Actors.GetHashCode());*/
 //getters and setters (Encapsulation)
 
 
-using System;
-using System.Collections;
 
 
-Burger Majestic = new Burger("The Majestic", 730);
-//Console.WriteLine(Majestic.Price);
 
-Burger DoubleDecker = new Burger("The DoubleDecker", 830);
-//Console.WriteLine(DoubleDecker.Price);
+//Burger Majestic = new Burger("The Majestic", 730);
+////Console.WriteLine(Majestic.Price);
 
-Burger Doppler = new Burger("The Doppler", 2730);
-Console.WriteLine(Doppler.Price);
+//Burger DoubleDecker = new Burger("The DoubleDecker", 830);
+////Console.WriteLine(DoubleDecker.Price);
+
+//Burger Doppler = new Burger("The Doppler", 2730);
+//Console.WriteLine(Doppler.Price);
 
 //List<Burger> Orders = new List<Burger>();
 //Orders.Add(Majestic);
@@ -1168,46 +1167,46 @@ Console.WriteLine(Doppler.Price);
 //    {
 //        Console.WriteLine($"We are offering {item.name} at {item.Price}");
 //    }
- 
+
 //}
 
 
-public class Burger
-{
-    public string name;
-    private int price;
-   // public int Price { get; set; }// Autocomplete property
+//public class Burger
+//{
+//    public string name;
+//    private int price;
+//   // public int Price { get; set; }// Autocomplete property
 
 
-    public int Price
-    {
-        get
-        {
-            return this.price;
-        }
-        set
-        {
-            if (value <= 2000)
-            {
-                this.price = value;
-            }
-            else
-            {
-                this.price = 2000;
-            }
-
-           
-        }
-    }
-
-public Burger(string name, int price)
-{
-    this.name = name;
-    this.Price = price;
-}
+//    public int Price
+//    {
+//        get
+//        {
+//            return this.price;
+//        }
+//        set
+//        {
+//            if (value <= 2000)
+//            {
+//                this.price = value;
+//            }
+//            else
+//            {
+//                this.price = 2000;
+//            }
 
 
-}
+//        }
+//    }
+
+//public Burger(string name, int price)
+//{
+//    this.name = name;
+//    this.Price = price;
+//}
+
+
+//}
 
 //Enum
 
@@ -1230,3 +1229,97 @@ public Burger(string name, int price)
 //    Naseem= 76
 //}
 
+//LINQ (Language Integrated Query) (Data filtering, sort, aggreagte )
+
+//.ForEach()
+
+//IEnumerable<string> names=.Select(e => e.FirstName).Distinct();
+//.OrderBy().ThenBy().ToList()
+//.OrderByDescending().ThenBy().ToList()
+//employees = employees.First(e => e.FirstName == "Haris");//Last
+//employees = employees.FirstOrDefault(e => e.FirstName == "Haris");//LastOrDefault
+//employees = employees.Single(e => e.FirstName == "Haris");//LastOrDefault
+//Skip , take ,DistinctBy
+
+using System;
+using System.Collections;
+using System.Linq;
+
+Employee emp1 = new Employee(1, "Rabia", 45000, 45, "admin officer");
+Employee emp2 = new Employee(2, "Alishba", 46000, 46, "IT officer");
+
+Employee emp3 = new Employee(3, "Fizza", 47000, 47, "Manager");
+Employee emp4 = new Employee(4, "Filza", 48000, 48, "Db Admin");
+Employee emp5 = new Employee(5, "Tooba", 46500, 49, "Asst. Manager");
+Employee emp6 = new Employee(6, "Fareeha", 49000, 50, "Db Designer");
+
+
+List <Employee> employees = new List <Employee> ();
+employees.Add(emp1);
+employees.Add(emp2);    
+employees.Add(emp3); 
+employees.Add(emp4);
+employees.Add(emp5);
+employees.Add(emp6);
+
+//Employee alishba = employees.First(e => e.name == "Alishba");
+//Employee abc = employees.Last(e => e.age >45 );
+
+//Console.WriteLine(abc.name);
+//foreach (var item in alishba)
+//{
+//    Console.WriteLine(item);
+
+
+//}
+//Console.WriteLine(alishba.name);
+
+employees = employees.Where(e => e.salary < 49000 || e.age <47 || e.id !=2).Skip(2).Take(3).ToList();
+
+//int count = employees.Count();
+Console.WriteLine(employees.Count());
+
+Console.WriteLine(employees.Max(e=>e.salary));//returns maximum Value
+
+Console.WriteLine((employees.MaxBy(e=>e.salary).name));//returns maximum Value wala object 
+
+//IEnumerable <Employee> newEmp=employees.Skip(2);
+//IEnumerable <Employee> newEmp=employees.Take(2);
+//IEnumerable <Employee> newEmp=employees.Skip(2).Take(2);
+
+//IEnumerable<int> designation=employees.Select(e => e.age);
+IEnumerable<Employee> orderedEmp = employees.OrderByDescending(emp => emp.name).ThenByDescending(emp => emp.designation);
+
+//employees.ForEach(a =>
+//    Console.WriteLine("id: {0}, name:{1}, salary:{2}, age: {3}, designation : {4}", a.id, a.name, a.salary, a.age, a.designation));
+
+
+//foreach (var a in newEmp)
+//{
+//    Console.WriteLine("id: {0}, name:{1}, salary:{2}, age: {3}, designation : {4}", a.id, a.name, a.salary, a.age, a.designation);
+//}
+public class Employee
+{
+    public int id { get; set; }
+    public string? name { get; set; }
+    public int salary { get; set; }
+    public int age { get; set; }
+    public string? designation{ get; set; }
+
+    public Employee(int id, string name, int salary, int age, string desig)
+    {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.age = age;
+        this.designation = desig;
+    }
+
+
+}
+
+//1. Order the list in ascending order by name and then by descending order by id
+//2. Get employees which are getting salary more than or equal to 60000 at the age of less than 33 years.
+//3. Get data of first four employees skipping 2.
+//4. get minimum salary we are paying and also get the object.
+//5. Get last employees whose salary is below 500000.
