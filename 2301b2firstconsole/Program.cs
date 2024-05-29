@@ -1043,8 +1043,9 @@ Console.WriteLine(Actors.GetHashCode());*/
 
 //}
 
+//Maths.Calculator abc = new Maths.Calculator(Add);
 
-// Delegates
+// Multicast Delegates
 
 //Maths.Calculator cal;
 
@@ -1241,29 +1242,29 @@ Console.WriteLine(Actors.GetHashCode());*/
 //employees = employees.Single(e => e.FirstName == "Haris");//LastOrDefault
 //Skip , take ,DistinctBy
 
-using System;
-using System.Collections;
-using System.Linq;
+//using System;
+//using System.Collections;
+//using System.Linq;
 
-Employee emp1 = new Employee(1, "Rabia", 45000, 45, "admin officer");
-Employee emp2 = new Employee(2, "Alishba", 46000, 46, "IT officer");
+//Employee emp1 = new Employee(1, "Rabia", 45000, 45, "admin officer");
+//Employee emp2 = new Employee(2, "Alishba", 46000, 46, "IT officer");
 
-Employee emp3 = new Employee(3, "Fizza", 47000, 47, "Manager");
-Employee emp4 = new Employee(4, "Filza", 48000, 48, "Db Admin");
-Employee emp5 = new Employee(5, "Tooba", 46500, 49, "Asst. Manager");
-Employee emp6 = new Employee(6, "Fareeha", 49000, 50, "Db Designer");
+//Employee emp3 = new Employee(3, "Fizza", 47000, 47, "Manager");
+//Employee emp4 = new Employee(4, "Filza", 48000, 48, "Db Admin");
+//Employee emp5 = new Employee(5, "Tooba", 46500, 49, "Asst. Manager");
+//Employee emp6 = new Employee(6, "Fareeha", 49000, 50, "Db Designer");
 
 
-List <Employee> employees = new List <Employee> ();
-employees.Add(emp1);
-employees.Add(emp2);    
-employees.Add(emp3); 
-employees.Add(emp4);
-employees.Add(emp5);
-employees.Add(emp6);
+//List<Employee> employees = new List<Employee>();
+//employees.Add(emp1);
+//employees.Add(emp2);
+//employees.Add(emp3);
+//employees.Add(emp4);
+//employees.Add(emp5);
+//employees.Add(emp6);
 
 //Employee alishba = employees.First(e => e.name == "Alishba");
-//Employee abc = employees.Last(e => e.age >45 );
+//Employee abc = employees.Last(e => e.age > 45);
 
 //Console.WriteLine(abc.name);
 //foreach (var item in alishba)
@@ -1272,23 +1273,23 @@ employees.Add(emp6);
 
 
 //}
-//Console.WriteLine(alishba.name);
+////Console.WriteLine(alishba.name);
 
-employees = employees.Where(e => e.salary < 49000 || e.age <47 || e.id !=2).Skip(2).Take(3).ToList();
+//employees = employees.Where(e => e.salary < 49000 || e.age < 47 || e.id != 2).Skip(2).Take(3).ToList();
 
-//int count = employees.Count();
-Console.WriteLine(employees.Count());
+////int count = employees.Count();
+//Console.WriteLine(employees.Count());
 
-Console.WriteLine(employees.Max(e=>e.salary));//returns maximum Value
+//Console.WriteLine(employees.Max(e=>e.salary));//returns maximum Value
 
-Console.WriteLine((employees.MaxBy(e=>e.salary).name));//returns maximum Value wala object 
+//Console.WriteLine((employees.MaxBy(e=>e.salary).name));//returns maximum Value wala object 
 
-//IEnumerable <Employee> newEmp=employees.Skip(2);
-//IEnumerable <Employee> newEmp=employees.Take(2);
-//IEnumerable <Employee> newEmp=employees.Skip(2).Take(2);
+//IEnumerable<Employee> newEmp = employees.Skip(2);
+//IEnumerable<Employee> newEmp = employees.Take(2);
+//IEnumerable<Employee> newEmp = employees.Skip(2).Take(2);
 
-//IEnumerable<int> designation=employees.Select(e => e.age);
-IEnumerable<Employee> orderedEmp = employees.OrderByDescending(emp => emp.name).ThenByDescending(emp => emp.designation);
+//IEnumerable<int> designation = employees.Select(e => e.age);
+//IEnumerable<Employee> orderedEmp = employees.OrderByDescending(emp => emp.name).ThenByDescending(emp => emp.designation);
 
 //employees.ForEach(a =>
 //    Console.WriteLine("id: {0}, name:{1}, salary:{2}, age: {3}, designation : {4}", a.id, a.name, a.salary, a.age, a.designation));
@@ -1296,30 +1297,208 @@ IEnumerable<Employee> orderedEmp = employees.OrderByDescending(emp => emp.name).
 
 //foreach (var a in newEmp)
 //{
-//    Console.WriteLine("id: {0}, name:{1}, salary:{2}, age: {3}, designation : {4}", a.id, a.name, a.salary, a.age, a.designation);
+//Console.WriteLine("id: {0}, name:{1}, salary:{2}, age: {3}, designation : {4}", a.id, a.name, a.salary, a.age, a.designation);
 //}
-public class Employee
+//public class Employee
+//{
+//    public int id { get; set; }
+//    public string? name { get; set; }
+//    public int salary { get; set; }
+//    public int age { get; set; }
+//    public string? designation { get; set; }
+
+//    public Employee(int id, string name, int salary, int age, string desig)
+//    {
+//        this.id = id;
+//        this.name = name;
+//        this.salary = salary;
+//        this.age = age;
+//        this.designation = desig;
+//    }
+
+
+    //}
+
+    //1. Order the list in ascending order by name and then by descending order by id
+    //2. Get employees which are getting salary more than or equal to 60000 at the age of less than 33 years.
+    //3. Get data of first four employees skipping 2.
+    //4. get minimum salary we are paying and also get the object.
+    //5. Get last employees whose salary is below 500000.
+
+
+    //Records, Indexers, namespaces
+
+    //using _2301b2firstconsole;
+    //student haris = new student(78, "haris");
+    //Console.WriteLine(haris.name);
+
+    // Records 
+
+    //Person a = new Person();
+    //a.name = "haris";
+    //a.age = 24;
+
+    //Person aa = new Person();
+    //aa.name = "haris";
+    //aa.age = 24;
+
+    //Console.WriteLine( a == aa );
+
+    //Record objects
+    //Person2 b = new Person2();
+    //b.name = "haris naseer";
+    //b.age = 25;
+
+    //Person2 bb = new Person2();
+    //bb.name = "haris";
+    //bb.age = 24;
+
+    //Console.WriteLine(b == bb);
+
+    //Console.WriteLine(a);
+    //Console.WriteLine(b);
+
+    //public class Person
+    //{
+    //    public string? name { get; set; }
+    //    public int? age { get; set; }
+    //}
+
+    //public record Person2
+    //{
+    //    public string? name { get; set; }
+    //    public int? age { get; set; }
+    //}
+
+
+    //Indexers  - if we want our object to behave like an array we apply indexers.
+
+    //fruits bucket1 = new fruits();
+    //bucket1[0] = "Mangoes";
+    //bucket1[1] = "Peaches";
+    //bucket1[2] = "Apricots";
+    //bucket1[3] = "Apples";
+    //bucket1[4] = "Pineapples";
+
+    //Console.WriteLine(bucket1[3]);
+
+    //for (int i=0; i < 5; i++)
+    //{
+    //    Console.WriteLine(bucket1[i]);
+
+    //}
+
+    //public class fruits
+    //{
+    //    public string[] fruitNames = new string[5];
+    //    public  string this[int i]
+    //    {
+    //        get { 
+
+    //        return fruitNames[i];
+    //        }
+    //        set {
+
+    //            fruitNames[i]=value;
+
+    //        }
+    //    }
+    //}
+
+    //Namespaces (collection of related classes)
+    //using _2301b2firstconsole;
+    //ToolTax toolTax = new ToolTax();
+    //toolTax.taxStatus = "UnPaid";
+    //toolTax.taxAmount = 4;
+
+    //Vehicle vehicle = new Vehicle();
+    //vehicle.regno = 1;
+    //vehicle.carName = "Tesla";
+
+    //Console.WriteLine(vehicle.regno);
+    //Console.WriteLine(vehicle.carName);
+
+    //0324 1257793 
+
+    //Events
+
+    //public class mycar
+    //{
+
+
+    //    public delegate void speedcar();
+    //    public event speedcar speedup;
+
+
+
+    //    public int speed = 0;
+
+    //    public void drive()
+    //    {
+    //        for (int i = 0; i < 20; i++)
+    //        {
+    //            if (i >= 10)
+    //                speedup();
+    //            speed += i;
+    //            Console.WriteLine("current speed" + i);
+    //            System.Threading.Thread.Sleep(500);
+
+    //        }
+    //    }
+
+    //    public static void Mm_carmoved()
+    //    {
+    //        Console.WriteLine("car has  exceed the limit");
+    //    }
+
+
+
+    //}
+    //class Program
+    //{
+
+    //    static void Main(string[] args)
+    //    {
+
+    //        mycar mm = new mycar();
+    //        mm.speedup += new mycar.speedcar(mycar.Mm_carmoved);
+    //        mm.drive();
+
+
+    //        Console.ReadKey();
+
+
+    //    }
+
+    //}
+    //events
+    myCar civic = new myCar();
+civic.speedUp += new myCar.speedcar(myCar.carMoved);
+civic.drive();
+
+public class myCar
 {
-    public int id { get; set; }
-    public string? name { get; set; }
-    public int salary { get; set; }
-    public int age { get; set; }
-    public string? designation{ get; set; }
+    public delegate void speedcar();
+    public event speedcar speedUp;
+    public int speed = 0;
 
-    public Employee(int id, string name, int salary, int age, string desig)
+    public void drive()
     {
-        this.id = id;
-        this.name = name;
-        this.salary = salary;
-        this.age = age;
-        this.designation = desig;
+        for(int i =0; i<10; i++)
+        {
+            if( i > 5)
+                speedUp();
+                speed += i;
+                Console.WriteLine("Current speed is "+ i);
+                System.Threading.Thread.Sleep(1000);
+
+        }
     }
-
-
+    public static void carMoved()
+    {
+        Console.WriteLine("the car speed limit has exceeded");
+    }
 }
 
-//1. Order the list in ascending order by name and then by descending order by id
-//2. Get employees which are getting salary more than or equal to 60000 at the age of less than 33 years.
-//3. Get data of first four employees skipping 2.
-//4. get minimum salary we are paying and also get the object.
-//5. Get last employees whose salary is below 500000.
+
+
